@@ -1,7 +1,7 @@
 # Lion’s Mane Offer
 ## Proposed Services Company
 Lion’s Mane
-
+0xa6a006C12338cdcDbC882c6ab97E4F9F82340651
 ## Summary
 Lion’s Mane (a company incorporated in the BVI) (Lion’s Mane) offers its services to the Tracer DAO (DAO) in order to work with the DAO on the development of Tracer and the Tracer DAO (collectively, the Tracer Project).
 
@@ -59,21 +59,21 @@ If this Offer is accepted as a Proposal under the Participation Agreement, Lion�
 In order for Lion’s Mane to be engaged to provide the services described in the Offer, the following targets and relevant proposalData must be passed to the DAO, via Proposal, by a current DAO member, in order to facilitate the execution of that Proposal. For each piece of Proposal data provided, the function encoded data that must be passed into the DAO is present, as well as the parameters and function calls used to generate this data. By utilising a package such as web3, any DAO member may verify this data using the web3.eth.abi.decodeParameters function (https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#decodeparameters).
 
 The steps that the DAO must execute in order to appoint Lion’s Mane are as follows:
-1.  Transfer 21500000 TCR tokens to the Lion’s Mane multisig.
-2. Transfer 193500000 TCR to the proposed vesting contract.
+1. Transfer 21500000 TCR tokens to the Lion’s Mane multisig (0xa6a006C12338cdcDbC882c6ab97E4F9F82340651).
+2. Transfer 193500000 TCR to the proposed vesting contract (0x90D93f5A390bFDBC401f92e916197ee17470a447).
 3. Set up a vesting schedule for 32250000 TCR to be transferred to the Lion’s Mane multisig exactly 6 months after the Proposal executes.
 4. Set up a vesting schedule for 161250000 TCR to be linearly vested to the Lion’s Mane multisig over 3 years, claimable at any time during that period.
 
 ### Step 1
 Name: Transfer 21500000 TCR tokens to the Lion’s Mane multisig.
 Target: 0x9C4A4204B79dd291D6b6571C5BE8BbcD0622F050 (Tracer Token Address)
-proposalData: (INSERT encoded data)
+proposalData: 0xa9059cbb000000000000000000000000a6a006c12338cdcdbc882c6ab97e4f9f8234065100000000000000000000000000000000000000000011c8cd55de35f505800000
 raw data: 
 - Function: transfer
 - Parameters:
     - Type: address
     - Name: recipient
-    - Value: LMD Multisig Wallet
+    - Value: 0xa6a006C12338cdcDbC882c6ab97E4F9F82340651
     - Type: uint256
     - Name: amount
     - Value: 21500000000000000000000000
@@ -81,27 +81,27 @@ raw data:
 ### Step 2
 Name: Transfer 193500000 TCR to the proposed vesting contract.
 Target: 0x9C4A4204B79dd291D6b6571C5BE8BbcD0622F050 (Tracer Token Address)
-proposalData: (INSERT encoded data)
+proposalData: 0xa9059cbb00000000000000000000000090d93f5a390bfdbc401f92e916197ee17470a447000000000000000000000000000000000000000000a00f3804cfe59d31800000
 raw data: 
 - Function: transfer
 - Parameters:
     - Type: address
     - Name: recipient
-    - Value: Proposed Vesting Contract
+    - Value: 0x90D93f5A390bFDBC401f92e916197ee17470a447
     - Type: uint256
     - Name: amount
     - Value: 193500000000000000000000000
 
 ### Step 3
 Name: Set up a vesting schedule for the Lion’s Mane multisig for 32250000 TCR to be released exactly 6 months after the Proposal executes.
-Target: 0x0 (Proposed Vesting Contract)
-proposalData: (INSERT encoded data)
+Target: 0x90D93f5A390bFDBC401f92e916197ee17470a447
+proposalData: 0x7825e7b5000000000000000000000000a6a006c12338cdcdbc882c6ab97e4f9f823406510000000000000000000000000000000000000000001aad3400cd50ef884000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000001a000000000000000000000000000000000000000000000000000000000000001a
 raw data: 
 - Function: setVestingSchedule
 - Parameters:
     - Type: address
     - Name: recipient
-    - Value: Proposed Vesting Contract
+    - Value: 0xa6a006C12338cdcDbC882c6ab97E4F9F82340651
     - Type: uint256
     - Name: amount
     - Value: 32250000000000000000000000
@@ -117,14 +117,14 @@ raw data:
 
 ### Step 4
 Name: Set Vesting for 161250000 TCR to be linearly vested over 3 years
-Target: 0x0 (Proposed Vesting Contract)
-proposalData: (INSERT encoded data)
+Target: 0x90D93f5A390bFDBC401f92e916197ee17470a447
+proposalData: 0x7825e7b5000000000000000000000000a6a006c12338cdcdbc882c6ab97e4f9f82340651000000000000000000000000000000000000000000856204040294ada940000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009c
 raw data: 
 - Function: setVestingSchedule
 - Parameters:
     - Type: address
     - Name: recipient
-    - Value: Proposed Vesting Contract
+    - Value: 0xa6a006C12338cdcDbC882c6ab97E4F9F82340651
     - Type: uint256
     - Name: amount
     - Value: 161250000000000000000000000
