@@ -3,7 +3,7 @@
 Lion’s Mane
 0xa6a006C12338cdcDbC882c6ab97E4F9F82340651
 ## Summary
-Lion’s Mane (a company incorporated in the BVI) (Lion’s Mane) offers its services to the Tracer DAO (DAO) in order to work with the DAO on the development of Tracer and the Tracer DAO (collectively, the Tracer Project).
+[Lion’s Mane](https://lionmane.com) (a company incorporated in the BVI) (Lion’s Mane) offers its services to the Tracer DAO (DAO) in order to work with the DAO on the development of Tracer and the Tracer DAO (collectively, the Tracer Project).
 
 ## Remuneration
 To assist in creating a thriving ecosystem for the Tracer Project, Lion’s Mane requests: 
