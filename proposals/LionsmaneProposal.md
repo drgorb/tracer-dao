@@ -58,6 +58,8 @@ If this Offer is accepted as a Proposal under the Participation Agreement, Lion�
 ## Technical Implementation of Proposal
 In order for Lion’s Mane to be engaged to provide the services described in the Offer, the following targets and relevant proposalData must be passed to the DAO, via Proposal, by a current DAO member, in order to facilitate the execution of that Proposal. For each piece of Proposal data provided, the function encoded data that must be passed into the DAO is present, as well as the parameters and function calls used to generate this data. By utilising a package such as web3, any DAO member may verify this data using the web3.eth.abi.decodeParameters function (https://web3js.readthedocs.io/en/v1.2.11/web3-eth-abi.html#decodeparameters).
 
+Currently, Lion's Mane's request of $75,000 USD per month will be implemented as a social contract between the Tracer DAO and Lion’s Mane. These funds will only be requested by Lion's Mane once the Tracer DAO treasury holds $1,000,000 USD (or equivalent), or more, in reserves. In the future, Lion’s Mane will produce a template for this type of request, in order to allow future beneficiaries of successful Proposals to request funds from the Tracer DAO when the treasury is above a set amount in reserves, in a trustless way.
+
 The steps that the DAO must execute in order to appoint Lion’s Mane are as follows:
 1. Transfer 21500000 TCR tokens to the Lion’s Mane multisig (0xa6a006C12338cdcDbC882c6ab97E4F9F82340651).
 2. Transfer 193500000 TCR to the proposed vesting contract (0x90D93f5A390bFDBC401f92e916197ee17470a447).
