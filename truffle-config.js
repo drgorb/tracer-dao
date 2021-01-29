@@ -19,6 +19,11 @@ module.exports = {
       port: 8545,
       network_id: '*',
     },
+    localTest: {
+      host: '127.0.0.1',
+      port: 8545,
+      network_id: '420',
+    },
     DAODEPLOY: {
       network_id: '1',
       gasPrice: 95000000000,
