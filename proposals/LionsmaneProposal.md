@@ -69,7 +69,7 @@ The steps that the DAO must execute in order to appoint Lion’s Mane are as fol
 ### Step 1
 Name: Transfer 21500000 TCR tokens to the Lion’s Mane multisig.\
 Target: 0x9C4A4204B79dd291D6b6571C5BE8BbcD0622F050 (Tracer Token Address)\
-proposalData: 0xa9059cbb000000000000000000000000a6a006c12338cdcdbc882c6ab97e4f9f8234065100000000000000000000000000000000000000000011c8cd55de35f505800000\ 
+proposalData: 0xa9059cbb000000000000000000000000a6a006c12338cdcdbc882c6ab97e4f9f8234065100000000000000000000000000000000000000000011c8cd55de35f505800000\
 raw data: 
 - Function: transfer
 - Parameters:
