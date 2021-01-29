@@ -183,57 +183,57 @@ contract('E2E', (accounts) => {
                 console.log(setUpVesting2)
                 
                 //Pre checks
-                // let startBalance = await tcr.balanceOf(lionsmaneMultisig)
-                // assert.equal(startBalance.toString(), web3.utils.toWei("0").toString())
+                let startBalance = await tcr.balanceOf(lionsmaneMultisig)
+                assert.equal(startBalance.toString(), web3.utils.toWei("0").toString())
 
-                // //Submit proposal
-                // let targets = [tcr.address, tcr.address, vesting.address, vesting.address]
-                // let data = [sendTokenData, sendTokenVestingData, setUpVesting1, setUpVesting2]
-                // await gov.propose(targets, data)
-                // await time.increase(100)
-                // await gov.vote(0, 1, web3.utils.toWei("1"), {from: accounts[1]})
-                // await time.increase(100)
-                // await gov.execute(0)
+                //Submit proposal
+                let targets = [tcr.address, tcr.address, vesting.address, vesting.address]
+                let data = [sendTokenData, sendTokenVestingData, setUpVesting1, setUpVesting2]
+                await gov.propose(targets, data)
+                await time.increase(100)
+                await gov.vote(0, 1, web3.utils.toWei("1"), {from: accounts[1]})
+                await time.increase(100)
+                await gov.execute(0)
 
-                // //Check proposal outcome
-                // let lionsmaneBalance = await tcr.balanceOf(lionsmaneMultisig)
-                // //Receive 21,500,000 tokens up front
-                // assert.equal(lionsmaneBalance.toString(), web3.utils.toWei("21500000"))
+                //Check proposal outcome
+                let lionsmaneBalance = await tcr.balanceOf(lionsmaneMultisig)
+                //Receive 21,500,000 tokens up front
+                assert.equal(lionsmaneBalance.toString(), web3.utils.toWei("21500000"))
 
-                // let lionsmaneVesting1 = await vesting.getVesting(lionsmaneMultisig, 0)
-                // let lionsmaneVesting2 = await vesting.getVesting(lionsmaneMultisig, 1)
+                let lionsmaneVesting1 = await vesting.getVesting(lionsmaneMultisig, 0)
+                let lionsmaneVesting2 = await vesting.getVesting(lionsmaneMultisig, 1)
 
-                // //32,250,000 tokens vesting over 6 months
-                // assert.equal(lionsmaneVesting1[0].toString(), web3.utils.toWei("32250000"))
+                //32,250,000 tokens vesting over 6 months
+                assert.equal(lionsmaneVesting1[0].toString(), web3.utils.toWei("32250000"))
 
-                // //161,250,000 tokens vesting over 3 years
-                // assert.equal(lionsmaneVesting2[0].toString(), web3.utils.toWei("161250000"))
+                //161,250,000 tokens vesting over 3 years
+                assert.equal(lionsmaneVesting2[0].toString(), web3.utils.toWei("161250000"))
 
-                // //Fast forward 6 months (26 weeks = 182 days) and run two claims
-                // time.increase(182 * day)
+                //Fast forward 6 months (26 weeks = 182 days) and run two claims
+                time.increase(182 * day)
                 
-                // //All 32,250,000 tokens should now be claimable
-                // let preClaim1 = await tcr.balanceOf(lionsmaneMultisig)
-                // await vesting.claim(0, {from: lionsmaneMultisig})
-                // let postClaim1 = await tcr.balanceOf(lionsmaneMultisig)
-                // assert.equal(postClaim1.sub(preClaim1).toString(), web3.utils.toWei("32250000"))
+                //All 32,250,000 tokens should now be claimable
+                let preClaim1 = await tcr.balanceOf(lionsmaneMultisig)
+                await vesting.claim(0, {from: lionsmaneMultisig})
+                let postClaim1 = await tcr.balanceOf(lionsmaneMultisig)
+                assert.equal(postClaim1.sub(preClaim1).toString(), web3.utils.toWei("32250000"))
 
-                // //1/6th of the 161,250,000 tokens should be claimable = 26875000
-                // let preClaim2 = await tcr.balanceOf(lionsmaneMultisig)
-                // await vesting.claim(1, {from: lionsmaneMultisig})
-                // let postClaim2 = await tcr.balanceOf(lionsmaneMultisig)
-                // assert.equal(postClaim2.sub(preClaim2).toString(), web3.utils.toWei("26875000"))
+                //1/6th of the 161,250,000 tokens should be claimable = 26875000
+                let preClaim2 = await tcr.balanceOf(lionsmaneMultisig)
+                await vesting.claim(1, {from: lionsmaneMultisig})
+                let postClaim2 = await tcr.balanceOf(lionsmaneMultisig)
+                assert.equal(postClaim2.sub(preClaim2).toString(), web3.utils.toWei("26875000"))
 
-                // //At the end of the 3 years, all tokens are claimable
-                // //fast forward 2.5 years = 130 weeks
-                // await time.increase(130 * 7 * day)
-                // let preClaim3 = await tcr.balanceOf(lionsmaneMultisig)
-                // await vesting.claim(1, {from: lionsmaneMultisig})
-                // let postClaim3 = await tcr.balanceOf(lionsmaneMultisig)
-                // assert.equal(postClaim3.sub(preClaim3).toString(), web3.utils.toWei("134375000"))
+                //At the end of the 3 years, all tokens are claimable
+                //fast forward 2.5 years = 130 weeks
+                await time.increase(130 * 7 * day)
+                let preClaim3 = await tcr.balanceOf(lionsmaneMultisig)
+                await vesting.claim(1, {from: lionsmaneMultisig})
+                let postClaim3 = await tcr.balanceOf(lionsmaneMultisig)
+                assert.equal(postClaim3.sub(preClaim3).toString(), web3.utils.toWei("134375000"))
 
-                // let finalBalance = await tcr.balanceOf(lionsmaneMultisig)
-                // assert.equal(finalBalance.toString(), web3.utils.toWei("215000000"))
+                let finalBalance = await tcr.balanceOf(lionsmaneMultisig)
+                assert.equal(finalBalance.toString(), web3.utils.toWei("215000000"))
             })
         })
     })
